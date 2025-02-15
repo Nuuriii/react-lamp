@@ -5,19 +5,16 @@ function App() {
   // useState
   const [myLamp, setMyLamp] = useState(false);
 
-  const handleOn = () => {
-    setMyName("Selamat Puasa guyssss");
-  };
-
   const handleOff = () => {
-    setMyName("Selamat Puasa guyssss");
+    setMyLamp(!myLamp);
   };
 
   return (
     <div>
-      <h1>{myLamp === true ? "Hidup" : "Mati"}</h1>
-      <button onClick={handleOff}>Matikan</button>
-      <button onClick={handleOn}>Menghidupkan</button>
+      {/* kalau misal True jadi bg-yellow-500, tapi klaau false jadi Bg-yellow-100 */}
+      <div className={` h-10 w-10 bg-yellow-100 rounded-full`}></div>
+
+      <button onClick={handleOff}>{myLamp ? "OFF" : "ON"}</button>
     </div>
   );
 }
